@@ -9,6 +9,7 @@ export default defineConfig({
     output: 'server',
     integrations: [tailwind()],
 
+    //   adapter: vercel()
     env: {
         schema: {
             SHOW_BUY_BUTTON: envField.boolean({ default: true, context: 'server', access: 'public' }),
@@ -16,5 +17,5 @@ export default defineConfig({
         }
     },
 
-    adapter: vercel()
+    adapter: vercel(),
 });
