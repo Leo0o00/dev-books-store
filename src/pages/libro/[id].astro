@@ -24,30 +24,30 @@ export const prerender = true;
 ---
 
 <Layout title={`${title} - Dev Store`}>
-    <div class="grid grid-cols-1 gap-x-12 gap-y-7 md:flex">
-        <div class="flex flex-col items-center gap-4S gap-y-6">
-            <a href="/" class="hover:underline opacity-70">⬅️Volver</a>
+    <div class="grid grid-cols-1 gap-y-7 mx-auto md:grid-cols-2">
+        <div class="flex flex-col items-center max-w-md">
+            <a href="/" class="hover:underline opacity-70 mb-6">⬅️Volver</a>
             <img
                 transition:name={`img-${slug}`}
                 class="rounded w-72 h-auto"
                 src={`/${img}`}
                 alt={title}
             />
-            <BookScore server:defer id={slug}>
-                <span slot="fallback" class="text-xs opacity-70"
+            <BookScore client:load id={slug}>
+                <span slot="fallback" class="text-xs opacity-70 my-6"
                     >Cargando puntuacion...</span
                 >
             </BookScore>
-            {SHOW_BUY_BUTTON && <BuyButton server:defer buy={buy} />}
+            {SHOW_BUY_BUTTON && <BuyButton client:load buy={buy} />}
         </div>
-        <main class="grid justify-items-center max-w-3xl">
+        <main class="grid content-center max-w-3xl">
             <h1
                 transition:name={`title-${slug}`}
-                class="text-4xl font-bold mb-4 max-w-2xl"
+                class="text-2xl font-semibold mb-4 max-w-2xl max-h-16"
             >
                 {title}
             </h1>
-            <div class="prose prose-invert text-justify">
+            <div class="prose prose-invert text-sm text-left">
                 <Content />
             </div>
         </main>

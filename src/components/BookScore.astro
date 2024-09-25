@@ -5,6 +5,6 @@ const res = await fetch(SCORE_API_ENDPOINT);
 const scoreValue = await res.text();
 ---
 
-<span class="text-xs" id="score">
+<span class="text-xs my-6" id="score">
     Puntuacion: {scoreValue.trim()}/5
 </span>
