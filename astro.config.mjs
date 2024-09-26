@@ -2,9 +2,6 @@
 import { defineConfig, envField } from 'astro/config';
 import tailwind from '@astrojs/tailwind'
 
-
-import vercel from '@astrojs/vercel/serverless';
-
 import netlify from '@astrojs/netlify';
 
 export default defineConfig({
