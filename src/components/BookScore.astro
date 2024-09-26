@@ -1,8 +1,12 @@
 ---
 import { SCORE_API_ENDPOINT } from "astro:env/server";
 
-const res = await fetch(SCORE_API_ENDPOINT);
-const scoreValue = await res.text();
+let scoreValue = "5";
+
+try {
+    const res = await fetch(SCORE_API_ENDPOINT);
+    scoreValue = await res.text();
+} catch (error) {}
 ---
 
 <span class="text-xs my-6" id="score">
