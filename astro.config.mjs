@@ -6,9 +6,12 @@ import tailwind from '@astrojs/tailwind'
 import vercel from '@astrojs/vercel/serverless';
 
 
+<<<<<<< HEAD
 import netlify from '@astrojs/netlify';
 
 
+=======
+>>>>>>> 2b49fadc0e1138bd16c0cf8cee3c129caadecbb7
 // https://astro.build/config
 export default defineConfig({
     output: 'hybrid',
